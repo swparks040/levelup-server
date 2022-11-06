@@ -1,0 +1,26 @@
+[
+    {
+        "model": "levelupapi.event",
+        "pk": 1,
+        "fields": {
+            "game": 1,
+            "description": "Frogger goes HAM in NYC!",
+            "date": "2022-11-02",
+            "time": "5:00",
+            "organizer": 1,
+            "gamers": []
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 2,
+        "fields": {
+            "game": 2,
+            "description": "Steal money from the people stealing your money!",
+            "date": "2022-11-01",
+            "time": "12:00",
+            "organizer": 1,
+            "gamers": []
+        }
+    }
+]
