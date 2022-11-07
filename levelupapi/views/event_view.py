@@ -17,7 +17,7 @@ class EventView(ViewSet):
         """
         game_type = Event.objects.get(pk=pk)
         serializer = EventSerializer(game_type)
-        return Response(serializer.data)
+        return Response(serializer.data, status = status.HTTP_200_OK)
 
 
     def list(self, request):
@@ -28,7 +28,7 @@ class EventView(ViewSet):
         """
         events = Event.objects.all()
         serializer = EventSerializer(events, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status = status.HTTP_200_OK)
 
     def create(self, request):
         """Handle POST operations
@@ -47,7 +47,7 @@ class EventView(ViewSet):
         
         )
         serializer = EventSerializer(event)
-        return Response(serializer.data)
+        return Response(serializer.data, status = status.HTTP_201_CREATED)
 
 class EventSerializer(serializers.ModelSerializer):
     """JSON serializer for events
