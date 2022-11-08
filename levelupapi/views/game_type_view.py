@@ -29,6 +29,18 @@ class GameTypeView(ViewSet):
         game_types = GameType.objects.all()
         serializer = GameTypeSerializer(game_types, many=True)
         return Response(serializer.data, status = status.HTTP_200_OK)
+    
+    def create(self, request):
+        """Handle POST operations
+
+        Returns:
+            Response -- JSON serialized game instance
+        """
+        game = GameType.objects.create(
+            label=request.data["label"],
+        )
+        serializer = GameTypeSerializer(game)
+        return Response(serializer.data, status = status.HTTP_201_CREATED)
 
 class GameTypeSerializer(serializers.ModelSerializer):
     """JSON serializer for game types
